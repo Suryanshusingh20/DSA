@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+//Creating Node of a Linked List
+class node{
+	public : 
+		int data;
+		node * next;
+};
+int main(){
+	node * node1 = new node();
+	node * node2 = new node();
+	cout<<node1 -> data<<endl;
+	cout<<node1-> next<<endl;
+}
+
+//Yha Default Constructor Banega or Vo Node 1 and Node 2 ki Value ko 0 se asssign kra dega.
