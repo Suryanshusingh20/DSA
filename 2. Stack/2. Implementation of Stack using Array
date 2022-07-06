@@ -1,0 +1,85 @@
+#include<iostream>
+using namespace std;
+//Stac Implementation using array
+class stack{
+	public :
+			//Data Members
+			int *arr;
+			int top;
+			int size;
+	
+	
+	
+			//Behaviour
+			//Contructor
+			stack(int size){
+			this->size=size;
+			arr= new int[size];
+			top=-1;
+		}
+		
+			//Push Operation
+			void push(int element){
+				//Space Available or Not
+				if(size-top>1){
+					top++;
+					arr[top]=element;
+				}
+				else{
+					cout<<"Stack Overflow"<<endl;
+				}
+			}
+			
+			//Pop Operation
+			void pop(){ 
+			if(top>=0){
+				top--;
+			}
+			
+			else{
+				cout<<"Stack Underflow"<<endl;
+			}
+			}
+			
+			//Top Element
+			int  peek(){
+				if(top>=0 && top<size){
+					return arr[top];
+				}
+				else{
+					cout<<"Stack is Empty";
+				}
+				return -1;
+			}
+			
+			//is Empty or not;
+			bool isEmpty(){
+				if(top==-1){
+					return true;
+				}
+				
+				else{
+					return false;
+				}
+			}
+	
+};
+
+
+int main(){
+	stack st(5);
+	
+	st.push(11);
+	st.push(12);
+	st.push(13);
+	st.push(14);
+	cout<<st.peek()<<endl;
+	
+	if(st.isEmpty()){
+		cout<<"empty"<<endl;
+	}
+	else{
+		cout<<"Not Empty"<<endl;
+	}
+	 
+}
